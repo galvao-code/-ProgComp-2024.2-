@@ -1,9 +1,12 @@
 # Código feito por Jullyana Pessoa e João Victor Gomes
 x = 2
 primos = 0
-contador = 0
+ult_primo = 0
 numeros = []
-while x <= 50:
+contador = 0
+numero = 50
+
+while x <= numero:
     div = 1
     ndiv = 0
     while div <= x:
@@ -13,11 +16,13 @@ while x <= 50:
     if ndiv == 2:
         primos += 1
         if x % 2 != 0:
-            #numeros.append(x)
-            contador += 1
+            if ult_primo != 0 and x - ult_primo == 2:
+                numeros.append ([ult_primo, x])
+                contador+=1
+            ult_primo = x
     x+=1
 
-print(f'A quantidade de número primos ímpares é: {contador}')
-#print(numeros)
+print(f'A quantidade de pares de números primos ímpares até {numero} são: {contador}')
+print(f'Os números são: {numeros}')
 
     
