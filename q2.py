@@ -2,7 +2,7 @@
 
 # declaramos as variáveis do menore maior número estabelecido na questão
 numero = 10
-num_final = 10000
+num_final = 100000
 # o contador com o valor de 0 para ir aumentando a quantidade de números palíndromos quando forem encontrados
 contador = 0
 
