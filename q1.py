@@ -22,7 +22,7 @@ for numero in range (numero, num_final + 1):
     if b < a:
       decrescente = False
 # se o número for decrescente, irá aumentar 1 no contador
-if decrescente:
+  if decrescente:
     contador += 1
     
 # e no final, mostramos a quantidade de números entre 10 e 987361
