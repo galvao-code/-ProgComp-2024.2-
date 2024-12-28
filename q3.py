@@ -4,7 +4,7 @@ primos = 0
 ult_primo = 0
 numeros = []
 contador = 0
-numero = 50
+numero = 10000
 
 while x <= numero:
     div = 1
