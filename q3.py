@@ -17,12 +17,12 @@ while x <= numero:
         primos += 1
         if x % 2 != 0:
             if ult_primo != 0 and x - ult_primo == 2:
-                numeros.append ([ult_primo, x])
+                #numeros.append ([ult_primo, x])
                 contador+=1
             ult_primo = x
     x+=1
 
 print(f'A quantidade de pares de números primos ímpares até {numero} são: {contador}')
-print(f'Os números são: {numeros}')
+#print(f'Os números são: {numeros}')
 
     
