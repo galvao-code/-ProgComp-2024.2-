@@ -19,7 +19,7 @@ for numero in range (numero, num_final + 1):
     #novamente pegamos o último digito e extraímos, só que o outro dígito após o da variável 'a'
     b = numero % 10
     #durante o processo, se b for menor que a, não o torna decrescente, logo decrescente é falso
-    if b <= a:
+    if b < a:
       decrescente = False
 # se o número for decrescente, irá aumentar 1 no contador
   if decrescente:
