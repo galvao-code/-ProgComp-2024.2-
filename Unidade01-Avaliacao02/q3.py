@@ -32,7 +32,6 @@ while x <= numero:
         if x % 2 != 0:
             #verificamos se os últimos dois primos ímpares encontrados são consecutivos
             if ult_primo != 0 and x - ult_primo == 2:
-                #numeros.append ([ult_primo, x]) 
                 #se forem consecutivos, ele incrementa o contador que será usado para mostrar a quantidade de pares
                 #são consecutivos quando a diferença entre os dois primos do par é 2
                 contador+=1
@@ -41,7 +40,7 @@ while x <= numero:
     x+=1
 
 print(f'A quantidade de pares de números primos ímpares até {numero} são: {contador}')
-#print(f'Os números são: {numeros}')
+
 
     
     
