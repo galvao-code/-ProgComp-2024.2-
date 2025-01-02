@@ -27,7 +27,6 @@ palavra2 = random.choice(palavras)
 chutes = 5
 tentativa_p1 = 0
 tentativa_p2 = 0
-tentativa = 0
 
 while chutes >= 0:
         print("\033[1;3m Digite todas as suas tentativas em caixa alta! Exemplo: PORTA")
