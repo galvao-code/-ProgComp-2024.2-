@@ -24,34 +24,66 @@ palavras = (
 
 palavra1 = random.choice(palavras)
 palavra2 = random.choice(palavras)
-chutes = 5
+while palavra2 == palavra1:
+    palavra2 = random.choice(palavras)
+
+chutes = 6
+print(palavra1)
+print(palavra2)
+acertou_p1 = False
+acertou_p2 = False
+tentativa_p1 = "_" * len(palavra1)
+tentativa_p2 = "_" * len(palavra2)  
 
 while chutes >= 0:
         print("\033[1;3m Digite todas as suas tentativas em caixa alta! Exemplo: PORTA")
         tentativa = input("\033[m Revele o mistério, qual é a palavra? ")
-        if tentativa == palavra1 or tentativa == palavra2:
-            print("Impossível! Você é um gênio.")
+
+        if tentativa == palavra1:
+            acertou_p1 = True
+
+        elif tentativa == palavra2:
+            acertou_p2 = True
+
+        if acertou_p1 and acertou_p2:
+            if chutes == 5 and acertou_p1 == True and acertou_p2 == True:
+                print("Impossível, você conseguiu de primeira!")
+            elif chutes == 4 and acertou_p1 == True and acertou_p2 == True:
+                print("Você é um ninja!")
+            elif chutes == 3 and acertou_p1 == True and acertou_p2 == True:
+                print("Impressionante!")
+            elif chutes == 2 and acertou_p1 == True and acertou_p2 == True:
+                print("Interessante!")
+            elif chutes == 1 and acertou_p1 == True and acertou_p2 == True:
+                print("Pode melhorar...")
             break
         else:
-            tentativa_p1 = ""
-            tentativa_p2 = ""   
+            nova_tentativap1 = ""
+            nova_tentativap2 = ""   
 
             for i in range(len(palavra1)):
                 if tentativa[i] == palavra1[i]:
-                    tentativa_p1 += palavra1[i]
+                    nova_tentativap1 += palavra1[i]
                 else:
-                    tentativa_p1 += "_"
+                    nova_tentativap1 += tentativa_p1[i]
+
             for i in range(len(palavra2)):
                 if tentativa[i] == palavra2[i]:
-                    tentativa_p2 += palavra2[i]
+                    nova_tentativap2 += palavra2[i]
                 else:
-                    tentativa_p2 += "_"
+                    nova_tentativap2 += tentativa_p2[i]
+
+            tentativa_p1 = nova_tentativap1 
+            tentativa_p2 = nova_tentativap2
+
         print(f"Progresso na palavra 1: {tentativa_p1}")
         print(f"Progresso na palavra 2: {tentativa_p2}")
-    chutes -= 1
-            if chutes > 0:
-                print(f"Não foi dessa vez! Você tem mais {chutes} tentativas.")
-            else:
-                print("Suas tentativas acabaram. Foi por pouco!")
-if chutes == 0:
-    print("as palavras corretas eram: ", palavra1, " e ", palavra2)
+
+        chutes -= 1
+
+        if chutes > 0:
+            print(f"Você tem mais {chutes} tentativas.")
+
+        if chutes == 0:
+            print("as palavras corretas eram: ", palavra1, " e ", palavra2)
+            print("Suas tentativas acabaram. Foi por pouco!")
