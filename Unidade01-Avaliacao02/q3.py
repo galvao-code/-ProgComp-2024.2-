@@ -12,7 +12,6 @@
 x = 2
 primos = 0
 ult_primo = 0
-numeros = []
 contador = 0
 numero = 10000
 
