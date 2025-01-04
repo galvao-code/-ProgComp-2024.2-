@@ -36,8 +36,8 @@ tentativa_p1 = "_" * len(palavra1)
 tentativa_p2 = "_" * len(palavra2)  
 
 while chutes >= 0:
-        print("\033[1;3m Digite todas as suas tentativas em caixa alta! Exemplo: PORTA")
-        tentativa = input("\033[m Revele o mistério, qual é a palavra? ")
+        print("\033[1;3m Digite todas as suas tentativas em caixa alta! Exemplo: PORTA \033[m")
+        tentativa = input("Revele o mistério, qual é a palavra? ")
 
         if tentativa == palavra1:
             acertou_p1 = True
@@ -56,6 +56,8 @@ while chutes >= 0:
                 print("Interessante!")
             elif chutes == 1 and acertou_p1 == True and acertou_p2 == True:
                 print("Pode melhorar...")
+
+            print(f"\033[1;30;42m{palavra1}, {palavra2}\033[m")
             break
         else:
             nova_tentativap1 = ""
@@ -63,15 +65,19 @@ while chutes >= 0:
 
             for i in range(len(palavra1)):
                 if tentativa[i] == palavra1[i]:
-                    nova_tentativap1 += palavra1[i]
+                    nova_tentativap1 += f"\033[1;30;42m{palavra1[i]}\033[m"
+                elif tentativa[i] in palavra1:
+                    nova_tentativap1 += f"\033[1;30;43m{palavra1[i]}\033[m"
                 else:
-                    nova_tentativap1 += tentativa_p1[i]
-
-            for i in range(len(palavra2)):
+                    nova_tentativap1 += f"\033[1;30;47m{tentativa_p1[i]}\033[m"
+                    
+            for i in range(len(palavra2)): 
                 if tentativa[i] == palavra2[i]:
-                    nova_tentativap2 += palavra2[i]
+                    nova_tentativap2 += f"\033[1;30;42m{palavra2[i]}\033[m"
+                elif tentativa[i] in palavra2:
+                    nova_tentativap2 += f"\033[1;30;43m{palavra2[i]}\033[m"
                 else:
-                    nova_tentativap2 += tentativa_p2[i]
+                    nova_tentativap2 += f"\033[1;30;47m{tentativa_p2[i]}\033[m"
 
             tentativa_p1 = nova_tentativap1 
             tentativa_p2 = nova_tentativap2
@@ -85,5 +91,6 @@ while chutes >= 0:
             print(f"Você tem mais {chutes} tentativas.")
 
         if chutes == 0:
-            print("as palavras corretas eram: ", palavra1, " e ", palavra2)
+            print(f"as palavras corretas eram: {palavra1} e {palavra2}")
             print("Suas tentativas acabaram. Foi por pouco!")
+        
