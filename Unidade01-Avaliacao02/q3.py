@@ -14,7 +14,7 @@ primos = 0
 ult_primo = 0
 numeros = []
 contador = 0
-numero = 50
+numero = 10000
 
 #usamos esse laço para realizar operações enquanto o x for menor igual ao valor máximo
 while x <= numero:
